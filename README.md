@@ -15,8 +15,8 @@ PART=statistics,snippe ##Make sure to add these parameters >
 
 Requests:
 ```
-localhost:8000/list - get list of channels
-localhost:8000/stat - update channels with Youtube API request
+GET localhost:8000/list - get list of channels
+GET localhost:8000/stat - update channels with Youtube API request
 ```
 
 Use `make build && make run` to build&run project.\
