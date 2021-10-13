@@ -1,0 +1,23 @@
+version: '3.3'
+
+services:
+  monitoring-app:
+    build: ./
+    command:
+      - ./monitoring-app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - monitoring-db
+    environment:
+      - DB_PASSWORD=qwerty
+
+  monitoring-db:
+    restart: always
+    image: postgres:latest
+    volumes:
+      - ./.database/postgres/data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=qwerty
+    ports:
+      - "5432:5432"
